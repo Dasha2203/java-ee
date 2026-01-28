@@ -11,6 +11,7 @@ import java.io.IOException;
 
 @WebServlet("/greeting")
 public class GreetingServlet extends HttpServlet {
+    int count = 0;
 
     @Override
     public void init() {
@@ -24,6 +25,8 @@ public class GreetingServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        response.getWriter().println("Hello:)");
+        count += 1;
+        response.getWriter().println("Hello:) " + count);
+//        response.sendError(403, "Access denied dsjkjksdjkd");
     }
 }
